@@ -19,7 +19,7 @@ export default async function DashboardPage() {
 
   return (
     <DashboardShell>
-      <DashboardHeader heading="Dashboard" text="Enterprise RAG toolkit.">
+      <DashboardHeader heading="Dashboard" text="Enterprise RAG AI toolkit.">
         <PostCreateButton />
       </DashboardHeader>
     </DashboardShell>
