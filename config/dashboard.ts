@@ -24,7 +24,7 @@ export const dashboardConfig: DashboardConfig = {
       icon: "post",
     },
     {
-      title: "Posts",
+      title: "Prompts",
       href: "/dashboard/posts",
       icon: "post",
     },
@@ -37,6 +37,16 @@ export const dashboardConfig: DashboardConfig = {
       title: "Settings",
       href: "/dashboard/settings",
       icon: "settings",
+    },
+    {
+      title: "Documentation",
+      href: "/docs",
+      icon: "settings",
+    },
+    {
+      title: "Support",
+      href: "/support",
+      disabled: true,
     },
   ],
 }

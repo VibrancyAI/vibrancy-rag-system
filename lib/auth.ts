@@ -10,7 +10,7 @@ import { db } from "@/lib/db"
 
 const postmarkClient = new Client(env.POSTMARK_API_TOKEN)
 
-export const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = { 
   adapter: PrismaAdapter(db),
   session: {
     strategy: "jwt",

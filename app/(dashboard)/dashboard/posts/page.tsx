@@ -37,7 +37,7 @@ export default async function PostsPage() {
 
   return (
     <DashboardShell>
-      <DashboardHeader heading="Posts" text="Create and manage posts.">
+      <DashboardHeader heading="Prompts" text="Create and manage prompts to tune.">
         <PostCreateButton />
       </DashboardHeader>
       <div>
@@ -52,7 +52,7 @@ export default async function PostsPage() {
             <EmptyPlaceholder.Icon name="post" />
             <EmptyPlaceholder.Title>No posts created</EmptyPlaceholder.Title>
             <EmptyPlaceholder.Description>
-              You don&apos;t have any posts yet. Start creating content.
+              You don&apos;t have any prompts yet. Start creating guidelines.
             </EmptyPlaceholder.Description>
             <PostCreateButton variant="outline" />
           </EmptyPlaceholder>

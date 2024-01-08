@@ -4,6 +4,9 @@ const { withContentlayer } = require("next-contentlayer")
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    windowHistorySupport: true
+  },
   reactStrictMode: true,
   images: {
     remotePatterns: [

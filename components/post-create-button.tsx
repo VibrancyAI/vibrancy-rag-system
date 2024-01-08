@@ -27,7 +27,7 @@ export function PostCreateButton({
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        title: "Untitled Post",
+        title: "Untitled Prompt",
       }),
     })
 
@@ -75,7 +75,7 @@ export function PostCreateButton({
       ) : (
         <Icons.add className="mr-2 h-4 w-4" />
       )}
-      New post
+      New prompt
     </button>
   )
 }
