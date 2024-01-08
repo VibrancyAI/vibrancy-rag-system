@@ -4,6 +4,7 @@ import { allAuthors, allPosts } from "contentlayer/generated"
 import { Mdx } from "@/components/mdx-components"
 
 import "@/styles/mdx.css"
+
 import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
@@ -132,7 +133,7 @@ export default async function PostPage({ params }: PostPageProps) {
                     alt={author.title}
                     width={42}
                     height={42}
-                    className="rounded-full bg-white"
+                    className="rounded-full bg-background"
                   />
                   <div className="flex-1 text-left leading-tight">
                     <p className="font-medium">{author.title}</p>

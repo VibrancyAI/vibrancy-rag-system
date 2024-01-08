@@ -1,9 +1,11 @@
-import { Inter as FontSans } from "next/font/google"
-import localFont from "next/font/local"
+import { Outfit as FontSans } from "next/font/google"
 
 import "@/styles/globals.css"
+
+import { Metadata, Viewport } from "next"
+
 import { siteConfig } from "@/config/site"
-import { absoluteUrl, cn } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
 import { Analytics } from "@/components/analytics"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
@@ -14,17 +16,18 @@ const fontSans = FontSans({
   variable: "--font-sans",
 })
 
-// Font files can be colocated inside of `pages`
-const fontHeading = localFont({
-  src: "../assets/fonts/CalSans-SemiBold.woff2",
+const fontHeading = FontSans({
+  // Using Outfit for headings too
+  subsets: ["latin"],
   variable: "--font-heading",
+  // Adjust weights as needed for headings
 })
 
 interface RootLayoutProps {
   children: React.ReactNode
 }
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
@@ -44,10 +47,7 @@ export const metadata = {
     },
   ],
   creator: "shadcn",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
+
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -69,6 +69,13 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
