@@ -41,7 +41,7 @@ export default async function ChatPage() {
   return (
     <DashboardShell>
       <DashboardHeader heading="RAG Chat" text="Search using RAG technology.">
-        <PostCreateButton />
+        {/* <PostCreateButton /> */}
       </DashboardHeader>
       <Chat id={id} />
     </DashboardShell>
