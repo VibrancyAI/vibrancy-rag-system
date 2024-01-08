@@ -19,34 +19,16 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              shadcn
+              vibrancy
             </a>
-            . Hosted on{" "}
+            . Powered by Next14, Microsoft Azure and OpenAI . Find out more at{" "}
             <a
-              href="https://vercel.com"
+              href="https://www.vibrancy.ai/"
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              Vercel
-            </a>
-            . Illustrations by{" "}
-            <a
-              href="https://popsy.co"
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              Popsy
-            </a>
-            . The source code is available on{" "}
-            <a
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              GitHub
+              vibrancy.ai
             </a>
             .
           </p>

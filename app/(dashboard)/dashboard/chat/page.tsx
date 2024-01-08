@@ -1,25 +1,43 @@
 import { redirect } from "next/navigation"
 
 import { authOptions } from "@/lib/auth"
+import { db } from "@/lib/db"
 import { getCurrentUser } from "@/lib/session"
+import { EmptyPlaceholder } from "@/components/empty-placeholder"
 import { DashboardHeader } from "@/components/header"
 import { PostCreateButton } from "@/components/post-create-button"
+import { PostItem } from "@/components/post-item"
 import { DashboardShell } from "@/components/shell"
 
 export const metadata = {
-  title: "Dashboard",
+  title: "Chat",
 }
 
-export default async function DashboardPage() {
+export default async function ChatPage() {
   const user = await getCurrentUser()
 
   if (!user) {
     redirect(authOptions?.pages?.signIn || "/login")
   }
 
+  const posts = await db.post.findMany({
+    where: {
+      authorId: user.id,
+    },
+    select: {
+      id: true,
+      title: true,
+      published: true,
+      createdAt: true,
+    },
+    orderBy: {
+      updatedAt: "desc",
+    },
+  })
+
   return (
     <DashboardShell>
-      <DashboardHeader heading="Dashboard" text="Enterprise RAG toolkit.">
+      <DashboardHeader heading="RAG Chat" text="Search using RAG technology.">
         <PostCreateButton />
       </DashboardHeader>
     </DashboardShell>
