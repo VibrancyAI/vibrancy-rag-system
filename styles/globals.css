@@ -37,7 +37,7 @@
   }
 
   .dark {
-    --background: #0c0c0c; /* was 224 71% 4% */
+    --background: #131313; /* was 224 71% 4% */
     --foreground: #e7e9eb; /* was 213 31% 91% */
 
     --muted: #1d2730; /* was 223 47% 11% */
@@ -46,16 +46,16 @@
     --accent: #2b333b; /* was 216 34% 17% */
     --accent-foreground: #fcfcfc; /* was 210 40% 98% */
 
-    --popover: #350004; /* was 224 71% 4% */
+    --popover: #1d2022; /* was 224 71% 4% */
     --popover-foreground: #a6b1b7; /* was 215 20.2% 65.1% */
 
     --border: #2b333b; /* was 216 34% 17% */
     --input: #2b333b; /* was 216 34% 17% */
 
-    --card: #350004; /* was 224 71% 4% */
+    --card: #1c2125; /* was 224 71% 4% */
     --card-foreground: #e7e9eb; /* was 213 31% 91% */
 
-    --primary: #d2f65a;; /* was 210 40% 98% */
+    --primary: #d2f65a; /* was 210 40% 98% */
     --primary-foreground: #1d2730; /* was 222.2 47.4% 1.2% */
 
     --secondary: #1d2730; /* was 222.2 47.4% 11.2% */
@@ -76,12 +76,15 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
-  h1,h2 {
-    @apply text-3xl sm:text-5xl md:text-6xl lg:text-9xl font-black
+  h1,
+  h2 {
+    @apply text-3xl sm:text-5xl md:text-6xl lg:text-9xl font-black;
   }
- h2 {
-  @apply text-3xl sm:text-5xl md:text-6xl lg:text-8xl 
- }
+  h2 {
+    @apply text-3xl sm:text-5xl md:text-6xl lg:text-8xl;
+  }
 }
