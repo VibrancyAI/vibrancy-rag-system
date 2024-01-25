@@ -8,7 +8,6 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
 import { Analytics } from "@/components/analytics"
-import { Providers } from "@/components/chat/providers"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -90,19 +89,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontHeading.variable
         )}
       >
-        <Providers
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {children}
-            <Analytics />
-            <Toaster />
-            <TailwindIndicator />
-          </ThemeProvider>
-        </Providers>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+          <Analytics />
+          <Toaster />
+          <TailwindIndicator />
+        </ThemeProvider>
       </body>
     </html>
   )

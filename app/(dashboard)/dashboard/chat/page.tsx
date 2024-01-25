@@ -4,7 +4,7 @@ import { authOptions } from "@/lib/auth"
 import { db } from "@/lib/db"
 import { getCurrentUser } from "@/lib/session"
 import { nanoid } from "@/lib/utils"
-import { Chat } from "@/components/chat/chat"
+import Chat from "@/components/chat/chat"
 import { EmptyPlaceholder } from "@/components/empty-placeholder"
 import { DashboardHeader } from "@/components/header"
 import { PostCreateButton } from "@/components/post-create-button"
@@ -40,10 +40,13 @@ export default async function ChatPage() {
 
   return (
     <DashboardShell>
-      <DashboardHeader heading="RAG Chat" text="Search using RAG technology.">
+      <DashboardHeader
+        heading="Freelancer Pool"
+        text="Search for freelancers using RAG technology."
+      >
         {/* <PostCreateButton /> */}
       </DashboardHeader>
-      <Chat id={id} />
+      <Chat />
     </DashboardShell>
   )
 }

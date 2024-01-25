@@ -38,16 +38,18 @@ export default async function IndexPage() {
 
   return (
     <>
-      <section className="space-y-6 pb-8 pt-4 md:pb-12 md:pt-10 lg:py-32">
-        <div className="container flex max-w-[70rem] flex-col items-center gap-4 text-center">
+      <section className="space-y-6 px-10 pb-8 pt-4 md:pb-12 md:pt-10 lg:py-32">
+        <div className="flex  flex-col gap-4 ">
           <Link
             href={siteConfig.links.twitter}
-            className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
+            className="w-64 rounded-2xl bg-muted px-4 py-1.5 text-center text-sm font-medium"
             target="_blank"
           >
             Follow along on Twitter
           </Link>
-          <h1 className="font-heading ">Next Azure Open AI RAG System</h1>
+          <h1 className="font-heading">
+            Cutting Edge<br></br>Strategic Insights
+          </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
             I&apos;m building a web app with Next.js 13 and open sourcing
             everything. Follow along as we figure this out together.

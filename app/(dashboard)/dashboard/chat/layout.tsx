@@ -1,5 +1,3 @@
-import { SidebarDesktop } from "@/components/chat/sidebar-desktop"
-
 interface ChatLayoutProps {
   children: React.ReactNode
 }
@@ -13,7 +11,7 @@ export default async function ChatLayout({ children }: ChatLayoutProps) {
           {children}
         </div>
 
-        <SidebarDesktop />
+        {/* <SidebarDesktop /> */}
       </div>
     </div>
   )

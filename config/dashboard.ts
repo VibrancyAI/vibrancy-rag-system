@@ -19,7 +19,7 @@ export const dashboardConfig: DashboardConfig = {
       icon: "post",
     },
     {
-      title: "RAG Chat",
+      title: "Freelancer Pool",
       href: "/dashboard/chat",
       icon: "post",
     },
