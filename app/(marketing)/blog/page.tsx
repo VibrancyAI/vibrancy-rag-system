@@ -51,7 +51,7 @@ export default async function BlogPage() {
                 <p className="text-muted-foreground">{post.description}</p>
               )}
               {post.date && (
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xl text-muted-foreground">
                   {formatDate(post.date)}
                 </p>
               )}

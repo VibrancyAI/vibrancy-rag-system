@@ -42,7 +42,7 @@ export default async function IndexPage() {
         <div className="flex  flex-col gap-4 ">
           <Link
             href={siteConfig.links.twitter}
-            className="w-64 rounded-2xl bg-muted px-4 py-1.5 text-center text-sm font-medium"
+            className="w-64 rounded-2xl bg-muted px-4 py-1.5 text-center text-xl font-medium"
             target="_blank"
           >
             Follow along on Twitter
@@ -92,7 +92,7 @@ export default async function IndexPage() {
               </svg>
               <div className="space-y-2">
                 <h3 className="font-bold">Next.js 13</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xl text-muted-foreground">
                   App dir, Routing, Layouts, Loading UI and API routes.
                 </p>
               </div>
@@ -105,7 +105,7 @@ export default async function IndexPage() {
               </svg>
               <div className="space-y-2">
                 <h3 className="font-bold">React 18</h3>
-                <p className="text-sm">
+                <p className="text-xl">
                   Server and Client Components. Use hook.
                 </p>
               </div>
@@ -118,7 +118,7 @@ export default async function IndexPage() {
               </svg>
               <div className="space-y-2">
                 <h3 className="font-bold">Database</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xl text-muted-foreground">
                   ORM using Prisma and deployed on PlanetScale.
                 </p>
               </div>
@@ -131,7 +131,7 @@ export default async function IndexPage() {
               </svg>
               <div className="space-y-2">
                 <h3 className="font-bold">Components</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xl text-muted-foreground">
                   UI components built using Radix UI and styled with Tailwind
                   CSS.
                 </p>
@@ -151,7 +151,7 @@ export default async function IndexPage() {
               </svg>
               <div className="space-y-2">
                 <h3 className="font-bold">Authentication</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xl text-muted-foreground">
                   Authentication using NextAuth.js and middlewares.
                 </p>
               </div>
@@ -164,7 +164,7 @@ export default async function IndexPage() {
               </svg>
               <div className="space-y-2">
                 <h3 className="font-bold">Subscriptions</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xl text-muted-foreground">
                   Free and paid subscriptions using Stripe.
                 </p>
               </div>

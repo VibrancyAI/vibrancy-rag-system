@@ -46,7 +46,7 @@ export default function GuidesPage() {
                   )}
                 </div>
                 {guide.date && (
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xl text-muted-foreground">
                     {formatDate(guide.date)}
                   </p>
                 )}

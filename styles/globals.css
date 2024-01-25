@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: #ffffff; /* was 0 0% 100% */
+    --background: #5cdeff; /* was 0 0% 100% */
     --foreground: #1b1b1b; /* was 222.2 47.4% 11.2% */
 
     --muted: #f3f7f9; /* was 210 40% 96.1% */
@@ -37,7 +37,7 @@
   }
 
   .dark {
-    --background: #131313; /* was 224 71% 4% */
+    --background: #191d21; /* was 224 71% 4% */
     --foreground: #e7e9eb; /* was 213 31% 91% */
 
     --muted: #1d2730; /* was 223 47% 11% */
@@ -75,7 +75,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-xl;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;

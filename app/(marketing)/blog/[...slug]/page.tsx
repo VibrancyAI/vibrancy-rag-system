@@ -111,7 +111,7 @@ export default async function PostPage({ params }: PostPageProps) {
         {post.date && (
           <time
             dateTime={post.date}
-            className="block text-sm text-muted-foreground"
+            className="block text-xl text-muted-foreground"
           >
             Published on {formatDate(post.date)}
           </time>
@@ -126,7 +126,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 <Link
                   key={author._id}
                   href={`https://twitter.com/${author.twitter}`}
-                  className="flex items-center space-x-2 text-sm"
+                  className="flex items-center space-x-2 text-xl"
                 >
                   <Image
                     src={author.avatar}

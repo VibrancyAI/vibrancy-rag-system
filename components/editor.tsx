@@ -11,6 +11,7 @@ import TextareaAutosize from "react-textarea-autosize"
 import * as z from "zod"
 
 import "@/styles/editor.css"
+
 import { cn } from "@/lib/utils"
 import { postPatchSchema } from "@/lib/validations/post"
 import { buttonVariants } from "@/components/ui/button"
@@ -134,7 +135,7 @@ export function Editor({ post }: EditorProps) {
                 Back
               </>
             </Link>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xl text-muted-foreground">
               {post.published ? "Published" : "Draft"}
             </p>
           </div>
@@ -155,7 +156,7 @@ export function Editor({ post }: EditorProps) {
             {...register("title")}
           />
           <div id="editor" className="min-h-[500px]" />
-          <p className="text-sm text-gray-500">
+          <p className="text-xl text-gray-500">
             Use{" "}
             <kbd className="rounded-md border bg-muted px-1 text-xs uppercase">
               Tab

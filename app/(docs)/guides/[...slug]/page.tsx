@@ -9,6 +9,7 @@ import { DocsPageHeader } from "@/components/page-header"
 import { DashboardTableOfContents } from "@/components/toc"
 
 import "@/styles/mdx.css"
+
 import { Metadata } from "next"
 
 import { env } from "@/env.mjs"
@@ -107,7 +108,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
           </Link>
         </div>
       </div>
-      <div className="hidden text-sm lg:block">
+      <div className="hidden text-xl lg:block">
         <div className="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10">
           <DashboardTableOfContents toc={toc} />
         </div>
