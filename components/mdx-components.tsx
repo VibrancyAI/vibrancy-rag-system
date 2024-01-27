@@ -37,7 +37,7 @@ const components = {
   h4: ({ className, ...props }) => (
     <h4
       className={cn(
-        "mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
+        "mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
         className
       )}
       {...props}
@@ -141,7 +141,7 @@ const components = {
   code: ({ className, ...props }) => (
     <code
       className={cn(
-        "relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-xl",
+        "relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-lg",
         className
       )}
       {...props}

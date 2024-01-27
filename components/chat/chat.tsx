@@ -6,15 +6,19 @@ import { Message, experimental_useAssistant as useAssistant } from "ai/react"
 import { motion } from "framer-motion"
 import { Send } from "lucide-react"
 import ReactMarkdown from "react-markdown"
+import rehypeRaw from "rehype-raw"
+import remarkGfm from "remark-gfm"
+
+import LottieAnimation from "../ui/lottie"
 
 // Define the role to background color map
 
 const roleToBgColorMap: Record<Message["role"], string> = {
-  system: "bg-red-100", // Example background colors
-  user: "bg-blue-100",
+  system: "bg-red-50", // Example background colors
+  user: "bg-yellow-400/10",
   function: "bg-green-100",
-  assistant: "bg-violet-100",
-  data: "bg-orange-100",
+  assistant: "bg-white",
+  data: "bg-blue-100",
   tool: "",
 }
 
@@ -34,7 +38,7 @@ const Chat: React.FC = () => {
   }, [status])
 
   return (
-    <div className="mx-auto flex w-full max-w-4xl flex-col py-8 pb-64">
+    <div className=" mx-auto flex w-full max-w-3xl flex-col py-4 pb-64">
       <div className="px-4">
         {/* Error display */}
         {error != null && (
@@ -42,7 +46,7 @@ const Chat: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="custom-shadow relative rounded-2xl bg-red-500 px-6 py-4 text-white"
+            className="custom-shadow relative rounded-2xl bg-red-500 px-6 py-4 text-white "
           >
             <span className="block sm:inline">
               Error: {(error as any).toString()}
@@ -57,33 +61,48 @@ const Chat: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className={`custom-shadow my-2 rounded-2xl p-12 py-8 ${
-              roleToBgColorMap[m.role]
-            }`}
+            className="rounded-2xl bg-white"
           >
-            <h3 className="mb-4">{`${m.role}: `}</h3>
-            {m.role !== "data" ? (
-              <ReactMarkdown className="prose">{m.content}</ReactMarkdown>
-            ) : (
-              <>
-                {(m.data as any).description}
-                <br />
-                <pre className="bg-gray-200">
-                  {JSON.stringify(m.data, null, 2)}
-                </pre>
-              </>
-            )}
+            <div
+              className={`my-2 mb-3  rounded-2xl border bg-white p-12 py-8 shadow-sm  ${
+                roleToBgColorMap[m.role]
+              }`}
+            >
+              <h3 className="mb-4 font-bold">{`FreeBee: `}</h3>
+              {m.role !== "data" ? (
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  className="markdown"
+                  rehypePlugins={[rehypeRaw]}
+                >
+                  {m.content}
+                </ReactMarkdown>
+              ) : (
+                <>
+                  {(m.data as any).description}
+                  <br />
+                  <pre className="bg-gray-200">
+                    {JSON.stringify(m.data, null, 2)}
+                  </pre>
+                </>
+              )}
+            </div>
           </motion.div>
         ))}
 
         {/* Loading indicator */}
         {status === "in_progress" && (
           <motion.div
-            className="my-4 h-16 w-full max-w-4xl animate-pulse rounded-lg bg-gray-300 p-2 dark:bg-gray-600"
+            className=" my-4 h-16 w-full max-w-3xl animate-pulse rounded-lg p-2 "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-          />
+          >
+            <div className="ml-[35%] flex pt-8">
+              <p className="mt-3">FreeBee is going deep..</p>
+              <LottieAnimation height={50} width={50} />
+            </div>
+          </motion.div>
         )}
       </div>
 
@@ -93,7 +112,7 @@ const Chat: React.FC = () => {
           e.preventDefault()
           submitMessage()
         }}
-        className="fixed bottom-0 mb-8 flex w-full max-w-4xl px-4"
+        className="fixed bottom-4 mb-8 flex w-full max-w-3xl px-4"
       >
         <input
           ref={inputRef}

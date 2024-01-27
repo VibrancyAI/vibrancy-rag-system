@@ -23,7 +23,7 @@ export default async function BlogPage() {
           <h1 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl">
             Blog
           </h1>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-lg text-muted-foreground">
             A blog built using Contentlayer. Posts are written in MDX.
           </p>
         </div>
@@ -51,7 +51,7 @@ export default async function BlogPage() {
                 <p className="text-muted-foreground">{post.description}</p>
               )}
               {post.date && (
-                <p className="text-xl text-muted-foreground">
+                <p className="text-lg text-muted-foreground">
                   {formatDate(post.date)}
                 </p>
               )}

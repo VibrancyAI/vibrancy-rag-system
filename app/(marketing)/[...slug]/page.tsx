@@ -4,6 +4,7 @@ import { allPages } from "contentlayer/generated"
 import { Mdx } from "@/components/mdx-components"
 
 import "@/styles/mdx.css"
+
 import { Metadata } from "next"
 
 import { env } from "@/env.mjs"
@@ -89,7 +90,7 @@ export default async function PagePage({ params }: PageProps) {
           {page.title}
         </h1>
         {page.description && (
-          <p className="text-xl text-muted-foreground">{page.description}</p>
+          <p className="text-lg text-muted-foreground">{page.description}</p>
         )}
       </div>
       <hr className="my-4" />

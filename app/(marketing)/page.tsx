@@ -5,6 +5,7 @@ import { env } from "@/env.mjs"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/components/ui/button"
+import LottieAnimation from "@/components/ui/lottie"
 
 async function getGitHubStars(): Promise<string | null> {
   try {
@@ -39,24 +40,29 @@ export default async function IndexPage() {
   return (
     <>
       <section className="space-y-6 px-10 pb-8 pt-4 md:pb-12 md:pt-10 lg:py-32">
-        <div className="flex  flex-col gap-4 ">
+        <div className="ml-48 flex flex-col gap-4">
           <Link
             href={siteConfig.links.twitter}
-            className="w-64 rounded-2xl bg-muted px-4 py-1.5 text-center text-xl font-medium"
+            className="w-64 rounded-2xl bg-muted px-4 py-1.5 text-center text-lg font-medium"
             target="_blank"
           >
-            Follow along on Twitter
+            Freelancer Pool
           </Link>
-          <h1 className="font-heading">
-            Cutting Edge<br></br>Strategic Insights
+          <h1 className="text-[7.9em] font-extrabold ">
+            Dont Hire <br></br>a Recruiter..
           </h1>
-          <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+
+          <p className="max-w-[42rem] py-6 leading-normal text-muted-foreground sm:text-lg sm:leading-8">
             I&apos;m building a web app with Next.js 13 and open sourcing
             everything. Follow along as we figure this out together.
           </p>
+
           <div className="space-x-4">
+            <div className="absolute left-28 top-80">
+              <LottieAnimation width={200} height={200} />
+            </div>
             <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
-              Get Started
+              Subscribe to One
             </Link>
 
             <Link
@@ -92,7 +98,7 @@ export default async function IndexPage() {
               </svg>
               <div className="space-y-2">
                 <h3 className="font-bold">Next.js 13</h3>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-lg text-muted-foreground">
                   App dir, Routing, Layouts, Loading UI and API routes.
                 </p>
               </div>
@@ -105,7 +111,7 @@ export default async function IndexPage() {
               </svg>
               <div className="space-y-2">
                 <h3 className="font-bold">React 18</h3>
-                <p className="text-xl">
+                <p className="text-lg">
                   Server and Client Components. Use hook.
                 </p>
               </div>
@@ -118,7 +124,7 @@ export default async function IndexPage() {
               </svg>
               <div className="space-y-2">
                 <h3 className="font-bold">Database</h3>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-lg text-muted-foreground">
                   ORM using Prisma and deployed on PlanetScale.
                 </p>
               </div>
@@ -131,7 +137,7 @@ export default async function IndexPage() {
               </svg>
               <div className="space-y-2">
                 <h3 className="font-bold">Components</h3>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-lg text-muted-foreground">
                   UI components built using Radix UI and styled with Tailwind
                   CSS.
                 </p>
@@ -151,7 +157,7 @@ export default async function IndexPage() {
               </svg>
               <div className="space-y-2">
                 <h3 className="font-bold">Authentication</h3>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-lg text-muted-foreground">
                   Authentication using NextAuth.js and middlewares.
                 </p>
               </div>
@@ -164,7 +170,7 @@ export default async function IndexPage() {
               </svg>
               <div className="space-y-2">
                 <h3 className="font-bold">Subscriptions</h3>
-                <p className="text-xl text-muted-foreground">
+                <p className="text-lg text-muted-foreground">
                   Free and paid subscriptions using Stripe.
                 </p>
               </div>

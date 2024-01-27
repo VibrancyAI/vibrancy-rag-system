@@ -3,6 +3,7 @@ import Link from "next/link"
 import { marketingConfig } from "@/config/marketing"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import LottieAnimation from "@/components/ui/lottie"
 import { MainNav } from "@/components/main-nav"
 import { SiteFooter } from "@/components/site-footer"
 
@@ -15,8 +16,8 @@ export default async function MarketingLayout({
 }: MarketingLayoutProps) {
   return (
     <div className="flex min-h-screen flex-col bg-background shadow-2xl">
-      <header className="z-40 bg-background px-10">
-        <div className="flex h-20 items-center justify-between py-6">
+      <header className="z-40 bg-background">
+        <div className="flex h-20 items-center justify-between bg-primary px-10 py-6">
           <MainNav items={marketingConfig.mainNav} />
           <nav>
             <Link
@@ -31,6 +32,7 @@ export default async function MarketingLayout({
           </nav>
         </div>
       </header>
+
       <main className="flex-1">{children}</main>
       <SiteFooter />
     </div>

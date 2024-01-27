@@ -38,7 +38,7 @@ export default function GuidesPage() {
               )}
               <div className="flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
-                  <h2 className="text-xl font-medium tracking-tight">
+                  <h2 className="text-lg font-medium tracking-tight">
                     {guide.title}
                   </h2>
                   {guide.description && (
@@ -46,7 +46,7 @@ export default function GuidesPage() {
                   )}
                 </div>
                 {guide.date && (
-                  <p className="text-xl text-muted-foreground">
+                  <p className="text-lg text-muted-foreground">
                     {formatDate(guide.date)}
                   </p>
                 )}

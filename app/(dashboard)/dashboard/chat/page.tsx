@@ -40,12 +40,10 @@ export default async function ChatPage() {
 
   return (
     <DashboardShell>
-      <DashboardHeader
+      {/* <DashboardHeader
         heading="Freelancer Pool"
         text="Search for freelancers using RAG technology."
-      >
-        {/* <PostCreateButton /> */}
-      </DashboardHeader>
+      ></DashboardHeader> */}
       <Chat />
     </DashboardShell>
   )

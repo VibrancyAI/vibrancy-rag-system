@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: #5cdeff; /* was 0 0% 100% */
+    --background: #f8fafa; /* was 0 0% 100% */
     --foreground: #1b1b1b; /* was 222.2 47.4% 11.2% */
 
     --muted: #f3f7f9; /* was 210 40% 96.1% */
@@ -19,7 +19,7 @@
     --card: #ffffff; /* was 0 0% 100% */
     --card-foreground: #1b1b1b; /* was 222.2 47.4% 11.2% */
 
-    --primary: #d2f65a; /* was 222.2 47.4% 11.2% */
+    --primary: #ffdf2d; /* was 222.2 47.4% 11.2% */
     --primary-foreground: #1b1b1b; /* was 210 40% 98% */
 
     --secondary: #f3f7f9; /* was 210 40% 96.1% */
@@ -75,10 +75,13 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground text-xl;
+    @apply bg-background text-foreground text-lg;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
+  }
+  p {
+    @apply pb-6;
   }
   h1,
   h2 {
@@ -86,5 +89,28 @@
   }
   h2 {
     @apply text-3xl sm:text-5xl md:text-6xl lg:text-8xl;
+  }
+
+  table tr:nth-child(2n) {
+    background: #f6f8fa;
+  }
+  .markdown {
+    table {
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 6px 13px;
+      border: 1px solid black;
+    }
+
+    li {
+      @apply pb-2;
+    }
+    ul,
+    ol {
+      @apply pb-6;
+    }
   }
 }

@@ -26,13 +26,13 @@ export function MobileNav({ items, children }: MobileNavProps) {
           <Icons.logo />
           <span className="font-bold">{siteConfig.name}</span>
         </Link>
-        <nav className="grid grid-flow-row auto-rows-max text-xl">
+        <nav className="grid grid-flow-row auto-rows-max text-lg">
           {items.map((item, index) => (
             <Link
               key={index}
               href={item.disabled ? "#" : item.href}
               className={cn(
-                "flex w-full items-center rounded-md p-2 text-xl font-medium hover:underline",
+                "flex w-full items-center rounded-md p-2 text-lg font-medium hover:underline",
                 item.disabled && "cursor-not-allowed opacity-60"
               )}
             >
