@@ -37,12 +37,15 @@ export default async function PostsPage() {
 
   return (
     <DashboardShell className="mr-6">
-      <DashboardHeader  heading="Prompts" text="Create and manage prompts to tune.">
+      <DashboardHeader
+        heading="Prompts"
+        text="Create and manage prompts to tune."
+      >
         <PostCreateButton />
       </DashboardHeader>
       <div>
         {posts?.length ? (
-          <div className="mr-2 divide-y divide-border rounded-md border">
+          <div className="mr-2 divide-y divide-border rounded-md border bg-white">
             {posts.map((post) => (
               <PostItem key={post.id} post={post} />
             ))}

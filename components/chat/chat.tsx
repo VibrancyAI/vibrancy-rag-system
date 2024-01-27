@@ -5,8 +5,7 @@ import React, { useEffect, useRef } from "react"
 import { Message, experimental_useAssistant as useAssistant } from "ai/react"
 import { motion } from "framer-motion"
 import { Send } from "lucide-react"
-import ReactMarkdown from "react-markdown"
-import rehypeRaw from "rehype-raw"
+import Markdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 
 import LottieAnimation from "../ui/lottie"
@@ -15,7 +14,7 @@ import LottieAnimation from "../ui/lottie"
 
 const roleToBgColorMap: Record<Message["role"], string> = {
   system: "bg-red-50", // Example background colors
-  user: "bg-yellow-400/10",
+  user: "bg-neutral-50",
   function: "bg-green-100",
   assistant: "bg-white",
   data: "bg-blue-100",
@@ -46,7 +45,7 @@ const Chat: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="custom-shadow relative rounded-2xl bg-red-500 px-6 py-4 text-white "
+            className="custom-shadow relative  bg-red-500 px-6 py-4 text-white "
           >
             <span className="block sm:inline">
               Error: {(error as any).toString()}
@@ -61,27 +60,34 @@ const Chat: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="rounded-2xl bg-white"
           >
             <div
-              className={`my-2 mb-3  rounded-2xl border bg-white p-12 py-8 shadow-sm  ${
+              className={`my-2 mb-3   rounded-sm border  p-12 py-8 shadow-sm  ${
                 roleToBgColorMap[m.role]
               }`}
             >
-              <h3 className="mb-4 font-bold">{`FreeBee: `}</h3>
+              <h3 className="mb-4 font-bold">{`Assistant: `}</h3>
               {m.role !== "data" ? (
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
+                <Markdown
                   className="markdown"
-                  rehypePlugins={[rehypeRaw]}
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    code({ node, children, ...props }) {
+                      return (
+                        <div className="pb-10">
+                          <code {...props}>{children}</code>
+                        </div>
+                      )
+                    },
+                  }}
                 >
                   {m.content}
-                </ReactMarkdown>
+                </Markdown>
               ) : (
                 <>
                   {(m.data as any).description}
                   <br />
-                  <pre className="bg-gray-200">
+                  <pre className="mt-6 rounded-md bg-primary p-6 text-sm text-white">
                     {JSON.stringify(m.data, null, 2)}
                   </pre>
                 </>
@@ -93,15 +99,15 @@ const Chat: React.FC = () => {
         {/* Loading indicator */}
         {status === "in_progress" && (
           <motion.div
-            className=" my-4 h-16 w-full max-w-3xl animate-pulse rounded-lg p-2 "
+            className="my-4 flex h-16 w-full max-w-3xl animate-pulse flex-col items-center justify-center rounded-lg p-2 pt-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <div className="ml-[35%] flex pt-8">
-              <p className="mt-3">FreeBee is going deep..</p>
-              <LottieAnimation height={50} width={50} />
+            <div className="flex items-center justify-center">
+              <LottieAnimation height={30} width={30} />
             </div>
+            <p className="mt-3 text-center">Vibrancy is thinking..</p>
           </motion.div>
         )}
       </div>
@@ -117,15 +123,12 @@ const Chat: React.FC = () => {
         <input
           ref={inputRef}
           disabled={status !== "awaiting_message"}
-          className="custom-shadow rounded-l-4xl w-full border border-gray-300 p-5 outline-none"
+          className="custom-shadow w-full rounded-l-md border border-gray-300 p-5 outline-none"
           value={input}
           placeholder="Enter your requirements here"
           onChange={handleInputChange}
         />
-        <button
-          type="submit"
-          className="rounded-r-4xl bg-neutral-500 px-6 py-4"
-        >
+        <button type="submit" className="rounded-r-md bg-primary px-6 py-4">
           <Send className="text-white" />
         </button>
       </form>

@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { useSelectedLayoutSegment } from "next/navigation"
 
@@ -21,9 +22,16 @@ export function MainNav({ items, children }: MainNavProps) {
 
   return (
     <div className="flex gap-6 md:gap-10">
-      <Link href="/" className="hidden items-center space-x-2 md:flex">
-        <h3 className="text-4xl font-black">FreeBee</h3>
-      </Link>
+      <div className="ml-4">
+        <Link href="/" className="hidden items-center space-x-2 md:flex">
+          <Image
+            src="/images/vibrancy.svg"
+            width={150}
+            height={30}
+            alt="Picture of the author"
+          />
+        </Link>
+      </div>
       {items?.length ? (
         <nav className="hidden gap-6 md:flex">
           {items?.map((item, index) => (
