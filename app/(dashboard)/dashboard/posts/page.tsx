@@ -45,7 +45,7 @@ export default async function PostsPage() {
       </DashboardHeader>
       <div>
         {posts?.length ? (
-          <div className="mr-2 divide-y divide-border rounded-md border bg-white">
+          <div className="mr-2 divide-y divide-border rounded-md border bg-card">
             {posts.map((post) => (
               <PostItem key={post.id} post={post} />
             ))}

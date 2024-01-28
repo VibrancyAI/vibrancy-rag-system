@@ -48,8 +48,8 @@ export default async function IndexPage() {
           >
             Freelancer Pool
           </Link>
-          <h1 className="text-[7.9em] font-extrabold ">
-            Dont Hire <br></br>a Recruiter..
+          <h1 className="text-[6.2em] ">
+            Insights Beyond <br></br>Your Wildest Dreams
           </h1>
 
           <p className="max-w-[42rem] py-6 leading-normal text-muted-foreground sm:text-lg sm:leading-8">
@@ -58,9 +58,9 @@ export default async function IndexPage() {
           </p>
 
           <div className="space-x-4">
-            <div className="absolute left-28 top-80">
+            {/* <div className="absolute left-28 top-80">
               <LottieAnimation width={200} height={200} />
-            </div>
+            </div> */}
             <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
               Subscribe to One
             </Link>

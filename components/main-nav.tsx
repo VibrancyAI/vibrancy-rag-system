@@ -4,6 +4,7 @@ import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useSelectedLayoutSegment } from "next/navigation"
+import { useTheme } from "next-themes"
 
 import { MainNavItem } from "types"
 import { siteConfig } from "@/config/site"
@@ -11,27 +12,23 @@ import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { MobileNav } from "@/components/mobile-nav"
 
+import { ModeToggle } from "./mode-toggle"
+import Logo from "./ui/logo"
+
 interface MainNavProps {
   items?: MainNavItem[]
   children?: React.ReactNode
 }
 
 export function MainNav({ items, children }: MainNavProps) {
+  const { setTheme, theme } = useTheme()
   const segment = useSelectedLayoutSegment()
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false)
 
   return (
     <div className="flex gap-6 md:gap-10">
-      <div className="ml-4">
-        <Link href="/" className="hidden items-center space-x-2 md:flex">
-          <Image
-            src="/images/vibrancy.svg"
-            width={150}
-            height={30}
-            alt="Picture of the author"
-          />
-        </Link>
-      </div>
+      <Logo />
+
       {items?.length ? (
         <nav className="hidden gap-6 md:flex">
           {items?.map((item, index) => (
@@ -51,6 +48,7 @@ export function MainNav({ items, children }: MainNavProps) {
           ))}
         </nav>
       ) : null}
+      <ModeToggle />
       <button
         className="flex items-center space-x-2 md:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}

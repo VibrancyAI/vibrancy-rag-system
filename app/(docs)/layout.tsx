@@ -15,7 +15,7 @@ interface DocsLayoutProps {
 export default function DocsLayout({ children }: DocsLayoutProps) {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-40 w-full border-b bg-white py-3">
+      <header className="sticky top-0 z-40 w-full border-b bg-card py-3">
         <div className="flex h-16 items-center space-x-4 px-6 sm:justify-between sm:space-x-0">
           <MainNav items={docsConfig.mainNav}>
             <DocsSidebarNav items={docsConfig.sidebarNav} />
@@ -38,7 +38,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
         </div>
       </header>
       <div className="flex-1 px-6">{children}</div>
-      <SiteFooter className="border-t bg-white" />
+      <SiteFooter className="border-t bg-card" />
     </div>
   )
 }

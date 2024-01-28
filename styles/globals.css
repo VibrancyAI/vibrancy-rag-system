@@ -4,67 +4,67 @@
 
 @layer base {
   :root {
-    --background: rgb(251, 251, 252); /* was 0 0% 100% */
-    --foreground: #1b1b1b; /* was 222.2 47.4% 11.2% */
+    --background: rgb(251, 251, 252);
+    --foreground: #1b1b1b;
 
-    --muted: #f3f7f9; /* was 210 40% 96.1% */
-    --muted-foreground: #72777d; /* was 215.4 16.3% 46.9% */
+    --muted: #f3f7f9;
+    --muted-foreground: #72777d;
 
-    --popover: #ffffff; /* was 0 0% 100% */
-    --popover-foreground: #1b1b1b; /* was 222.2 47.4% 11.2% */
+    --popover: #ffffff;
+    --popover-foreground: #1b1b1b;
 
-    --border: #ebeef0; /* was 214.3 31.8% 91.4% */
-    --input: #ebeef0; /* was 214.3 31.8% 91.4% */
+    --border: #ebeef0;
+    --input: #ebeef0;
 
-    --card: #ffffff; /* was 0 0% 100% */
-    --card-foreground: #1b1b1b; /* was 222.2 47.4% 11.2% */
+    --card: #ffffff;
+    --card-foreground: #1b1b1b;
 
-    --primary: #2d22ab; /* was 222.2 47.4% 11.2% */
-    --primary-foreground: #ffffff; /* was 210 40% 98% */
+    --primary: #2d22ab;
+    --primary-foreground: #ffffff;
 
-    --secondary: #f3f7f9; /* was 210 40% 96.1% */
-    --secondary-foreground: #1b1b1b; /* was 222.2 47.4% 11.2% */
+    --secondary: #f3f7f9;
+    --secondary-foreground: #1b1b1b;
 
-    --accent: #f3f7f9; /* was 210 40% 96.1% */
-    --accent-foreground: #1b1b1b; /* was 222.2 47.4% 11.2% */
+    --accent: #f3f7f9;
+    --accent-foreground: #1b1b1b;
 
-    --destructive: #ff0000; /* was 0 100% 50% */
-    --destructive-foreground: #fcfcfc; /* was 210 40% 98% */
+    --destructive: #ff0000;
+    --destructive-foreground: #fcfcfc;
 
-    --ring: #a6b1b7; /* was 215 20.2% 65.1% */
+    --ring: #a6b1b7;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: #191d21; /* was 224 71% 4% */
-    --foreground: #e7e9eb; /* was 213 31% 91% */
+    --background: #000000;
+    --foreground: #e7e9eb;
 
-    --muted: #1d2730; /* was 223 47% 11% */
-    --muted-foreground: #666d73; /* was 215.4 16.3% 56.9% */
+    --muted: #10161b;
+    --muted-foreground: #666d73;
 
-    --accent: #2b333b; /* was 216 34% 17% */
-    --accent-foreground: #fcfcfc; /* was 210 40% 98% */
+    --accent: #2b333b;
+    --accent-foreground: #fcfcfc;
 
-    --popover: #1d2022; /* was 224 71% 4% */
-    --popover-foreground: #a6b1b7; /* was 215 20.2% 65.1% */
+    --popover: #1d2022;
+    --popover-foreground: #a6b1b7;
 
-    --border: #2b333b; /* was 216 34% 17% */
-    --input: #2b333b; /* was 216 34% 17% */
+    --border: #121518;
+    --input: #2b333b;
 
-    --card: #1c2125; /* was 224 71% 4% */
-    --card-foreground: #e7e9eb; /* was 213 31% 91% */
+    --card: #0b0d0f;
+    --card-foreground: #e7e9eb;
 
-    --primary: #d2f65a; /* was 210 40% 98% */
-    --primary-foreground: #1d2730; /* was 222.2 47.4% 1.2% */
+    --primary: #2d22ab;
+    --primary-foreground: #e6eaed;
 
-    --secondary: #1d2730; /* was 222.2 47.4% 11.2% */
-    --secondary-foreground: #fcfcfc; /* was 210 40% 98% */
+    --secondary: #1d2730;
+    --secondary-foreground: #fcfcfc;
 
-    --destructive: #a80000; /* was 0 63% 31% */
-    --destructive-foreground: #fcfcfc; /* was 210 40% 98% */
+    --destructive: #a80000;
+    --destructive-foreground: #fcfcfc;
 
-    --ring: #2b333b; /* was 216 34% 17% */
+    --ring: #2b333b;
 
     --radius: 0.5rem;
   }
@@ -93,18 +93,18 @@
   }
 
   table {
-    @apply mb-8;
+    @apply mb-8 bg-white dark:bg-[#101314] shadow-sm;
   }
 
   table tr:nth-child(2n) {
-    background: #f6f8fa;
+    @apply bg-white dark:bg-[#1e2426];
   }
 
   .markdown {
     th,
     td {
       padding: 3px 13px; /* Reduced top and bottom padding */
-      border: 1px solid rgb(212, 212, 212);
+      border: 1px solid rgba(164, 164, 164, 0.124);
       font-size: 14px; /* Smaller font size */
     }
 
